@@ -5,125 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Future of Renewable Energy</title>
     <style>
-        /* Reset some default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+        /* Reset & base styles */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f4f4f9; color: #333; transition: background 0.3s, color 0.3s;}
+        h1,h2 {color: #2c3e50;}
+        a {text-decoration: none; color: inherit;}
+        img {max-width: 100%; border-radius: 10px; transition: transform 0.3s; cursor: pointer;}
+        img:hover {transform: scale(1.05);}
+        button {cursor: pointer; border: none; border-radius: 5px; padding: 0.5rem 1rem; transition: 0.3s;}
 
-        body {
-            line-height: 1.6;
-            background: #f4f4f9;
-            color: #333;
-        }
+        /* Header & Navbar */
+        header {position: sticky; top: 0; background: #2c3e50; color: #fff; padding: 1.5rem; text-align: center; z-index: 1000;}
+        header h1 {margin-bottom: 0.5rem;}
+        nav a {margin: 0 1rem; font-weight: bold; color: #ecf0f1;}
+        nav a:hover {color: #1abc9c;}
+        .theme-toggle {position: absolute; top: 1rem; right: 1rem; background: #1abc9c; color: #fff;}
 
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
+        /* Main content */
+        main {max-width: 900px; margin: 2rem auto; padding: 0 1rem;}
+        article {background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+        .fact-box {background: #eafaf1; border-left: 5px solid #1abc9c; padding: 1rem; margin: 1rem 0; border-radius: 5px;}
+        .read-more {display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #1abc9c; color: #fff; border-radius: 5px; transition: 0.3s;}
+        .read-more:hover {background: #16a085;}
+        
+        /* Footer */
+        footer {text-align: center; padding: 2rem; background: #2c3e50; color: #fff;}
 
-        header h1 {
-            margin-bottom: 0.5rem;
-        }
-
-        nav {
-            margin-top: 1rem;
-        }
-
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #1abc9c;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        article {
-            background: #fff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        article img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 1rem 0;
-        }
-
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: #1abc9c;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .read-more:hover {
-            background: #16a085;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #2c3e50;
-            color: #fff;
-        }
-
-        /* Interactive element */
-        .fact-box {
-            background: #eafaf1;
-            border-left: 5px solid #1abc9c;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 5px;
-        }
-
-        button {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            background: #3498db;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #2980b9;
-        }
+        /* Dark mode */
+        body.dark {background: #1a1a1a; color: #f4f4f4;}
+        body.dark article {background: #2c2c2c;}
+        body.dark .fact-box {background: #25322c; border-color: #1abc9c;}
+        body.dark .read-more, body.dark .theme-toggle {background: #16a085; color: #fff;}
+        
+        /* Smooth scroll */
+        html {scroll-behavior: smooth;}
     </style>
 </head>
 <body>
     <header>
         <h1>The Future of Renewable Energy</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
         <nav>
             <a href="#solar">Solar</a>
             <a href="#wind">Wind</a>
@@ -134,33 +55,27 @@
     <main>
         <article>
             <h2 id="solar">Solar Energy</h2>
-            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8c29sYXIlMjBlbmVyZ3l8fDB8fHx8MTY5Mzg0NTQ4Mw&ixlib=rb-4.0.3&q=80&w=1080" alt="Solar Panels">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Solar Panels">
             <p>Solar energy is rapidly becoming one of the most popular renewable energy sources in the world. By converting sunlight into electricity using photovoltaic (PV) cells, solar power offers a clean and sustainable alternative to fossil fuels.</p>
-            <div class="fact-box">
-                Did you know? The world’s largest solar farm, the Bhadla Solar Park in India, spans over 14,000 acres!
-            </div>
+            <div class="fact-box">Did you know? The world’s largest solar farm, Bhadla Solar Park in India, spans over 14,000 acres!</div>
             <a class="read-more" onclick="toggleText('solarText')">Read More</a>
             <p id="solarText" style="display:none;">Solar energy technology is advancing rapidly. Innovations like solar roof tiles and high-efficiency PV cells are making it easier for households and businesses to generate their own electricity while reducing carbon footprints.</p>
         </article>
 
         <article>
             <h2 id="wind">Wind Energy</h2>
-            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2luZCUyMGVuZXJneXx8MHx8fHwxNjkzODQ1NDky&ixlib=rb-4.0.3&q=80&w=1080" alt="Wind Turbines">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Wind Turbines">
             <p>Wind energy harnesses the kinetic energy of moving air to produce electricity. Modern wind turbines can generate enough power to supply thousands of homes.</p>
-            <div class="fact-box">
-                Fun Fact: Denmark generates nearly 50% of its electricity from wind power!
-            </div>
+            <div class="fact-box">Fun Fact: Denmark generates nearly 50% of its electricity from wind power!</div>
             <a class="read-more" onclick="toggleText('windText')">Read More</a>
             <p id="windText" style="display:none;">Offshore wind farms are expanding globally, providing enormous potential for clean energy generation. The technology is becoming more cost-effective and efficient, making it a cornerstone for future energy systems.</p>
         </article>
 
         <article>
             <h2 id="hydro">Hydropower</h2>
-            <img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aHlkcm8lMjBlbmVyZ3l8fDB8fHx8MTY5Mzg0NTU0Nw&ixlib=rb-4.0.3&q=80&w=1080" alt="Hydropower Dam">
+            <img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Hydropower Dam">
             <p>Hydropower generates electricity by using water flow to spin turbines. It is one of the oldest and most reliable forms of renewable energy.</p>
-            <div class="fact-box">
-                Did you know? The Three Gorges Dam in China is the world’s largest hydroelectric power station.
-            </div>
+            <div class="fact-box">Did you know? The Three Gorges Dam in China is the world’s largest hydroelectric power station.</div>
             <a class="read-more" onclick="toggleText('hydroText')">Read More</a>
             <p id="hydroText" style="display:none;">Small-scale hydropower plants are becoming increasingly popular for local communities, providing clean energy without the need for large dams, minimizing environmental impact.</p>
         </article>
@@ -178,15 +93,13 @@
     </footer>
 
     <script>
+        // Toggle "Read More" text
         function toggleText(id) {
             const text = document.getElementById(id);
-            if (text.style.display === "none") {
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
+            text.style.display = text.style.display === 'none' ? 'block' : 'none';
         }
 
+        // Random facts
         const facts = [
             "Solar energy could power the world 10,000 times over if fully harnessed.",
             "Wind energy is now cheaper than coal in many countries.",
@@ -197,6 +110,13 @@
         function showFact() {
             const fact = facts[Math.floor(Math.random() * facts.length)];
             document.getElementById('randomFact').innerText = fact;
+        }
+
+        // Dark/light mode toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const btn = document.querySelector('.theme-toggle');
+            btn.innerText = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
         }
     </script>
 </body>
